@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <!-- для корректного растягивания на разных устройствах -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+    <div id="gameArea">
+        <!-- здесь отрисовка шаблонов определенных ниже -->
+    </div>
+
+    <!-- заглавный экран при первой загрузке страницы -->
+    <script id="intro-screen-template" type="text/template">
+
+        <div class="titleWrapper">
+
+            <div class="title">
+                АНАГРАММЫ
+            </div>
+
+            <div class="buttons">
+
+                <button id="btnCreateGame" class="btn left">СОЗДАТЬ</button>
+                <button id="btnJoinGame" class="btn right">ПРИСОЕДИНИТЬСЯ</button>
+                <div style="clear:both"></div>
+            </div>
+
+        </div>
+
+    </script>
+
+    <!-- появляется когда нажимаем "создаем" -->
+    <script id="create-game-template" type="text/template">
+        <div class="createGameWrapper">
+
+            <div class="info">Откройте этот сайт на своем устройстве:</div>
+            <div id="gameURL" class="infoBig">Ошибка!</div>
+
+            <div class="info">Потом нажмите <strong>ПРИСОЕДИНИТЬСЯ</strong> и <br/> введите ID игры:</div>
+            <div id="spanNewGameCode" class="gameId">Ошибка!</div>
+
+            <div id="playersWaiting"></div>
+        </div>
+    </script>
+
+    <!-- появляется когда нажимаем "присоединиться" -->
+    <script id="join-game-template" type="text/template">
+        <div class="joinGameWrapper">
+            <div class="info">
+                <label for="inputPlayerName">Ваше имя:</label>
+                <input id="inputPlayerName" type="text" />
+            </div>
+
+            <div class="info">
+                <label for="inputGameId">ID игры:</label>
+                <input id="inputGameId" type="text"/>
+            </div>
+
+            <div class="info buttons">
+                <button id="btnStart" class="btn">Начать</button>
+                <div id="playerWaitingMessage"></div>
+            </div>
+        </div>
+    </script>
+
+    <!-- экран хоста, отображает слова для каждого игрока -->
+    <script id="host-game-template" type="text/template">
+        <div id="wordArea">
+            <div id="hostWord">5</div>
+        </div>
+        <div id="playerScores">
+            <div id="player1Score" class="playerScore">
+                <span class="score">0</span><span class="playerName">Игрок 1</span>
+            </div>
+            <div id="player2Score" class="playerScore">
+                <span class="playerName">Игрок 2</span><span class="score">0</span>
+            </div>
+        </div>
+    </script>
+
+    <!-- библиотеки js -->
+
+    <!-- jQuery! -->
+    <script src="libs/jquery-2.0.2.min.js"></script>
+
+    <!-- для корректного размера на любых экранах   -->
+    <script src="libs/textFit.min.js"></script>
+
+    <!-- убрать задержку клика -->
+    <script src="libs/fastclick.js"></script>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- игровая логика -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>

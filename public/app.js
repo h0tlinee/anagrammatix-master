@@ -376,9 +376,9 @@ jQuery(function ($) {
 
                 // выводим ничью или победителя
                 if (tie) {
-                    $('#hostWord').text("It's a Tie!");
+                    $('#hostWord').text("Ничья!");
                 } else {
-                    $('#hostWord').text(winner + ' Wins!!');
+                    $('#hostWord').text(winner + ' Побеждает!!');
                 }
                 App.doTextFit('#hostWord');
 
@@ -468,7 +468,7 @@ jQuery(function ($) {
                 }
                 IO.socket.emit('playerRestart', data);
                 App.currentRound = 0;
-                $('#gameArea').html("<h3>Waiting on host to start new game.</h3>");
+                $('#gameArea').html("<h3>Ждем второго игрока.</h3>");
             },
 
             /**
@@ -482,7 +482,7 @@ jQuery(function ($) {
 
                     $('#playerWaitingMessage')
                         .append('<p/>')
-                        .text('Joined Game ' + data.gameId + '. Please wait for game to begin.');
+                        .text('Присоединились к игре ' + data.gameId + '. Ждем начала игры.');
                 }
             },
 
@@ -493,7 +493,7 @@ jQuery(function ($) {
             gameCountdown: function (hostData) {
                 App.Player.hostSocketId = hostData.mySocketId;
                 $('#gameArea')
-                    .html('<div class="gameOver">Get Ready!</div>');
+                    .html('<div class="gameOver">Приготовьтесь!</div>');
             },
 
             /**
@@ -526,10 +526,10 @@ jQuery(function ($) {
              */
             endGame: function () {
                 $('#gameArea')
-                    .html('<div class="gameOver">Game Over!</div>')
+                    .html('<div class="gameOver">Игра окончена!</div>')
                     .append(
                         // кнопка для начать заново
-                        $('<button>Start Again</button>')
+                        $('<button>Начать заново</button>')
                             .attr('id', 'btnPlayerRestart')
                             .addClass('btn')
                             .addClass('btnGameOver')

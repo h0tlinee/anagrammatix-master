@@ -7,8 +7,9 @@ Dark Purple : #A22FB0
 
 */
 
-html, body {
-    background-color: #78BD4C;
+html,
+body {
+    background-color: #58a88c;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -33,7 +34,7 @@ html, body {
     font-size: 2em;
     line-height: 1.2;
     text-align: center;
-    background-color: #8AD453;
+    background-color: #00ae7d;
     white-space: nowrap;
     vertical-align: middle;
     cursor: pointer;
@@ -114,20 +115,22 @@ html, body {
      (create-game-template)
    ****************************** */
 
-.createGameWrapper, .joinGameWrapper, .gameOver {
+.createGameWrapper,
+.joinGameWrapper,
+.gameOver {
     font-family: 'Quicksand', sans-serif;
     margin: 0 auto;
     text-align: center;
 }
 
-.createGameWrapper .info{
+.createGameWrapper .info {
     color: #ECFFE0;
     font-weight: 400;
     font-size: 2em;
     margin-top: 1.5em;
 }
 
-.createGameWrapper{
+.createGameWrapper {
     color: #AE37B2;
     font-weight: 300;
 }
@@ -245,7 +248,8 @@ html, body {
     width: 100%;
 }
 
-#hostWord h2, #btnPlayerRestart h3 {
+#hostWord h2,
+#btnPlayerRestart h3 {
     font-size: 161px;
     line-height: 1em;
     font-family: 'Quicksand', sans-serif;
@@ -317,5 +321,3 @@ html, body {
     position: fixed;
     bottom: 0;
 }
-
-
